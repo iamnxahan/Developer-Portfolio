@@ -11,11 +11,14 @@
     --spacing: 0.25rem;
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --spacing-headerP: 40px;
+    --color-headerBg: #FFF8F3;
     --color-hDark: #474747;
     --color-btn: #FD6E0A;
     --color-darkOne: #181818;
@@ -188,6 +191,9 @@
   .flex {
     display: flex;
   }
+  .table {
+    display: table;
+  }
   .w-\[585px\] {
     width: 585px;
   }
@@ -196,6 +202,12 @@
   }
   .max-w-mContainer {
     max-width: var(--spacing-mContainer);
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
   }
   .items-center {
     align-items: center;
@@ -219,6 +231,9 @@
   .bg-btn {
     background-color: var(--color-btn);
   }
+  .bg-headerBg {
+    background-color: var(--color-headerBg);
+  }
   .bg-\[url\(\.\.\/images\/banner\.png\)\] {
     background-image: url(../images/banner.png);
   }
@@ -234,6 +249,9 @@
   .px-\[35px\] {
     padding-inline: 35px;
   }
+  .px-\[156px\] {
+    padding-inline: 156px;
+  }
   .py-5 {
     padding-block: calc(var(--spacing) * 5);
   }
@@ -242,6 +260,9 @@
   }
   .py-\[38px\] {
     padding-block: 38px;
+  }
+  .py-\[130px\] {
+    padding-block: 130px;
   }
   .pt-\[170px\] {
     padding-top: 170px;
@@ -258,8 +279,15 @@
   .pl-\[70px\] {
     padding-left: 70px;
   }
+  .text-center {
+    text-align: center;
+  }
   .font-open {
     font-family: var(--font-open);
+  }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
   }
   .text-xl {
     font-size: var(--text-xl);
@@ -273,6 +301,18 @@
   }
   .text-\[85px\] {
     font-size: 85px;
+  }
+  .leading-0 {
+    --tw-leading: calc(var(--spacing) * 0);
+    line-height: calc(var(--spacing) * 0);
+  }
+  .leading-\[30\] {
+    --tw-leading: 30;
+    line-height: 30;
+  }
+  .leading-\[30p\] {
+    --tw-leading: 30p;
+    line-height: 30p;
   }
   .leading-\[30px\] {
     --tw-leading: 30px;
@@ -300,6 +340,13 @@
   }
   .text-white {
     color: var(--color-white);
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
   }
   .hover\:bg-btn {
     &:hover {
@@ -329,12 +376,18 @@
   syntax: "*";
   inherits: false;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
       --tw-leading: initial;
       --tw-font-weight: initial;
+      --tw-outline-style: solid;
     }
   }
 }
